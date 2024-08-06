@@ -2,174 +2,145 @@ export const characters: Character[] = [
   {
     name: 'J.',
     surname: 'Cortes',
-    hintsA1: [
-      {
-        type: 'Carta',
-        name: 'carta de despedida'
-      },
-      {
-        type: 'Fotografia',
-        name: 'Foto carnet'
-      }
-    ],
-    hintsA2: [
-      {
-        type: 'Poema',
-        name: 'Un poema sobre la infancia'
-      },
-      {
-        type: 'Grabacion',
-        name: 'Una grabacion al piano'
-      },
-      {
-        type: 'Grabacion',
-        name: 'Una conversacion con Lucia',
-        hintDependency: 'fotografia de boda - Lucia'
-      }
-    ],
-    hintsA3: [
-      {
-        type: 'Grabacion',
-        name: 'Una conversacion con Lucia',
-        duplicated: true
-      },
-      {
-        type: 'Carta',
-        name: 'Una carta para Pedro'
-      }],
-    hintsA4: [
-      {
-        type: 'Fotografia',
-        name: 'Una fotografía de graduación',
-        duplicated: true
-      },
-      {
-        type: 'Grabacion',
-        name: 'Una carta para Abril',
-      },
-      {
-        type: 'Grabacion',
-        name: 'Una conversacion con Pedro'
-      }
-    ],
-    hintsA5: [
-      {
-        type: 'Grabacion',
-        name: 'Una conversacion con Lucia'
-      },
-      {
-        type: 'Grabacion',
-        name: 'Una conversacion con Andrea',
-        duplicated: true
-      }
-    ],
+    hints: [
+      //act 1
+      [
+        {
+          type: 'Carta',
+          name: 'carta de despedida',
+          given: false
+        },
+        {
+          type: 'Fotografia',
+          name: 'Foto carnet',
+          given: false
+        }
+      ],
+      //act 2
+      [
+        {
+          type: 'Poema',
+          name: 'Un poema sobre la infancia',
+          given: false
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una grabacion al piano',
+          given: false
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Lucia',
+          hintDependency: 'fotografia de boda - Lucia',
+          given: false
+        }
+      ],
+      //act 3
+      [
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Lucia',
+          duplicated: true,
+          given: false
+        },
+        {
+          type: 'Carta',
+          name: 'Una carta para Pedro',
+          given: false
+        }
+      ],
+      //act 4
+      [
+        {
+          type: 'Fotografia',
+          name: 'Una fotografía de graduación',
+          duplicated: true,
+          given: false
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una carta para Abril',
+          given: false
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Pedro',
+          given: false
+        }
+      ],
+      //act 5
+      [
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Lucia',
+          given: false
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Andrea',
+          duplicated: true,
+          given: false
+        }
+      ]]
   },
   {
     name: 'Lucia',
     surname: 'Cortes',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Sergi',
     surname: 'Roca',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Pedro',
     surname: 'Ferrer',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Ernesto',
     surname: 'Larrea',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     surname: 'Garcia',
     title: 'Sargento',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Marta',
     surname: 'Moreno',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Abril',
     surname: 'Curto',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Daniel',
     surname: 'Gutierrez',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Andrea',
     surname: 'Marino',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Ivette',
     surname: 'Ferrer',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Carim',
     surname: 'Alam',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   },
   {
     name: 'Ema',
     surname: 'Dupont',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hints: [[]]
   }
 ]

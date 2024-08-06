@@ -39,7 +39,7 @@
 
 .horizontal-flex {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 
 .character {
@@ -47,4 +47,13 @@
   padding: 5px;
   border: 1px solid #282c34;
   border-radius: 2px;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #04aa6d; /* Green */
+  color: white;
 }
