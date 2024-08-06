@@ -1,15 +1,18 @@
-interface HintProps {
-  hint?: Hint;
-}
+import { useContext } from "react";
+import { HintContext } from "../contexts/HintContextProvider";
 
-const HintComponent = (props: HintProps) => {
-  const { hint } = props;
+const HintComponent = () => {
+  const { currentHint, nextHint } = useContext(HintContext);
   return (
     <div>
-      {hint ? <div>type: {hint.type}</div> : undefined}
-      {hint ? <div>type: {hint.name}</div> : undefined}
+      {currentHint ? <div>type: {currentHint.type}</div> : undefined}
+      {currentHint ? <div>type: {currentHint.name}</div> : undefined}
       <div className="container">
-        {hint ? <div className="button">Give Hint</div> : undefined}
+        {currentHint ? (
+          <div className="button" onClick={nextHint}>
+            Give Hint
+          </div>
+        ) : undefined}
       </div>
     </div>
   );
