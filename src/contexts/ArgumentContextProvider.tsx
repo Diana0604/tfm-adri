@@ -2,9 +2,15 @@ import { createContext, useState } from "react";
 
 interface ArgumentProps {
   act: number;
+  nextAct: () => void;
 }
 
-export const ArgumentContext = createContext<ArgumentProps>({ act: 1 });
+const initProps: ArgumentProps = {
+  act: 1,
+  nextAct: () => {},
+};
+
+export const ArgumentContext = createContext<ArgumentProps>(initProps);
 
 const ArgumentContextProvider = ({
   children,
@@ -13,8 +19,12 @@ const ArgumentContextProvider = ({
 }) => {
   const [act, setAct] = useState<number>(1);
 
+  const nextAct = () => {
+    setAct(act + 1);
+  };
+
   return (
-    <ArgumentContext.Provider value={{ act }}>
+    <ArgumentContext.Provider value={{ act, nextAct }}>
       {children}
     </ArgumentContext.Provider>
   );

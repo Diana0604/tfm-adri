@@ -1,21 +1,12 @@
-import { createContext } from "react";
 import "./App.css";
-import CharacterComponent from "./components/CharacterComponent";
-import { characters } from "./constants";
 import ArgumentContextProvider from "./contexts/ArgumentContextProvider";
-import { CharacterContext } from "./contexts/CharacterContext";
+import ManagerComponent from "./components/ManagerComponent";
 
 function App() {
   return (
-    <div className="App horizontal-flex">
+    <div className="App container">
       <ArgumentContextProvider>
-        {characters.map((character) => {
-          return (
-            <CharacterContext.Provider value={character}>
-              <CharacterComponent />
-            </CharacterContext.Provider>
-          );
-        })}
+        <ManagerComponent />
       </ArgumentContextProvider>
     </div>
   );
