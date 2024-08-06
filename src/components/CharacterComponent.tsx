@@ -1,5 +1,9 @@
-const Character = () => {
-  return <></>
-}
+const CharacterComponent = (character: Character) => {
+  return (
+    <div className="character">
+      {character.title} {character.name} {character.surname}
+    </div>
+  );
+};
 
-export default Character
+export default CharacterComponent;
