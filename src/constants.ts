@@ -2,11 +2,67 @@ export const characters: Character[] = [
   {
     name: 'J.',
     surname: 'Cortes',
-    hintsA1: [],
-    hintsA2: [],
-    hintsA3: [],
-    hintsA4: [],
-    hintsA5: [],
+    hintsA1: [
+      {
+        type: 'Carta',
+        name: 'carta de despedida'
+      },
+      {
+        type: 'Fotografia',
+        name: 'Foto carnet'
+      }
+    ],
+    hintsA2: [
+      {
+        type: 'Poema',
+        name: 'Un poema sobre la infancia'
+      },
+      {
+        type: 'Grabacion',
+        name: 'Una grabacion al piano'
+      },
+      {
+        type: 'Grabacion',
+        name: 'Una conversacion con Lucia',
+        hintDependency: 'fotografia de boda - Lucia'
+      }
+    ],
+    hintsA3: [
+      {
+        type: 'Grabacion',
+        name: 'Una conversacion con Lucia',
+        duplicated: true
+      },
+      {
+        type: 'Carta',
+        name: 'Una carta para Pedro'
+      }],
+    hintsA4: [
+      {
+        type: 'Fotografia',
+        name: 'Una fotografía de graduación',
+        duplicated: true
+      },
+      {
+        type: 'Grabacion',
+        name: 'Una carta para Abril',
+      },
+      {
+        type: 'Grabacion',
+        name: 'Una conversacion con Pedro'
+      }
+    ],
+    hintsA5: [
+      {
+        type: 'Grabacion',
+        name: 'Una conversacion con Lucia'
+      },
+      {
+        type: 'Grabacion',
+        name: 'Una conversacion con Andrea',
+        duplicated: true
+      }
+    ],
   },
   {
     name: 'Lucia',

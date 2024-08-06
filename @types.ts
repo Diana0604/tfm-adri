@@ -9,8 +9,11 @@ type Character = {
   hintsA5: Hint[],
 }
 
-type HintType = 'Carta' | 'Foto' | 'Grabacion'
+type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema'
 
 type Hint = {
-  type: HintType
+  type: HintType,
+  name: string,
+  hintDependency?: string,
+  duplicated?: boolean
 }
