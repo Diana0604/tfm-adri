@@ -18,15 +18,24 @@ const HintContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { act } = useContext(ArgumentContext);
   const [currentHint, setCurrentHint] = useState<Hint>();
   const [hintIndex, setHintIndex] = useState<number>(0);
+  const [actIndex, setActIndex] = useState<number>(1);
 
   useEffect(() => {
-    setHintIndex(0);
+    if (currentHint === undefined) {
+      setHintIndex(0);
+      setActIndex(act);
+    }
   }, [act]);
 
   useEffect(() => {
-    if (character.hints[act] && character.hints[act][hintIndex])
-      setCurrentHint(character.hints[act][hintIndex]);
-    else setCurrentHint(undefined)
+    if (character.hints[actIndex] && character.hints[actIndex][hintIndex])
+      setCurrentHint(character.hints[actIndex][hintIndex]);
+    else {
+      if (act > actIndex) {
+        setActIndex(actIndex + 1);
+        setHintIndex(0);
+      } else setCurrentHint(undefined);
+    }
   }, [hintIndex]);
 
   const nextHint = () => {
@@ -40,4 +49,4 @@ const HintContextProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default HintContextProvider
+export default HintContextProvider;
