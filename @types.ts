@@ -1,15 +1,17 @@
 type Character = {
-  name?: string,
+  name: CharacterName,
   surname: string,
   title?: string,
   hints: Hint[][]
 }
 
-type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema'
+type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema' | 'Misc'
+
+type CharacterName = 'J.' | 'Lucia' | 'Sergi' | 'Pedro' | 'Ernesto' | 'Sargento' | 'Marta' | 'Abril' | 'Daniel' | 'Andrea' | 'Ivette' | 'Carim' | 'Ema' | ''
 
 type Hint = {
   type: HintType,
   name: string,
   hintDependency?: string,
-  duplicated?: boolean
+  duplicated?: string,
 }

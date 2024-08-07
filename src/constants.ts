@@ -35,7 +35,7 @@ export const characters: Character[] = [
         {
           type: 'Grabacion',
           name: 'Una conversacion con Lucia',
-          duplicated: true,
+          duplicated: 'Lucia',
         },
         {
           type: 'Carta',
@@ -47,7 +47,6 @@ export const characters: Character[] = [
         {
           type: 'Fotografia',
           name: 'Una fotografía de graduación',
-          duplicated: true,
         },
         {
           type: 'Grabacion',
@@ -67,14 +66,77 @@ export const characters: Character[] = [
         {
           type: 'Grabacion',
           name: 'Una conversacion con Andrea',
-          duplicated: true,
         }
       ]]
   },
   {
     name: 'Lucia',
     surname: 'Cortes',
-    hints: [[]]
+    hints: [
+      //acto 1
+      [],
+      //acto 2
+      [
+        {
+          type: 'Grabacion',
+          name: 'Un conversación con Julia'
+        },
+        {
+          type: 'Fotografia',
+          name: 'Una foto de un grafiti'
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una llamada telefonica con Pedro'
+        },
+        {
+          type: 'Misc',
+          name: 'Una invitacion de boda + una foto de recien casados'
+        }
+      ],
+      //acto 3
+      [
+        {
+          type: 'Fotografia',
+          name: 'Una fotografia con Julia',
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con J.',
+          duplicated: 'J.',
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una llamada con Sergio'
+        }
+      ],
+      //acto 4
+      [
+        {
+          type: 'Postal',
+          name: 'Una postal para Pedro'
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Sergi'
+        }
+      ],
+      //acto 5
+      [
+        {
+          type: 'Fotografia',
+          name: 'Una fotografia en un picnic'
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con J.'
+        },
+        {
+          type: 'Grabacion',
+          name: 'Una conversacion con Andrea'
+        }
+      ]
+    ]
   },
   {
     name: 'Sergi',
@@ -93,7 +155,7 @@ export const characters: Character[] = [
   },
   {
     surname: 'Garcia',
-    title: 'Sargento',
+    name: 'Sargento',
     hints: [[]]
   },
   {

@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 const defaultChar: Character = {
+  name: "",
   surname: "",
   hints: [],
 };
