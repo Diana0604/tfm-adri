@@ -90,7 +90,7 @@ export const hints: Hint[][] = [
   [
     {
       type: 'Grabacion',
-      name: 'Una conversacion con Lucia',
+      name: 'Conversacion Lucia - J.',
       belongsTo: ['Lucia', 'J.'],
     },
     {
