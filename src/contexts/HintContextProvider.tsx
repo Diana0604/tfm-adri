@@ -17,8 +17,10 @@ const HintContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [leftHints, setLeftHints] = useState<Hint[][]>(hints);
 
   const giveHint = (act: number, hintIndex: number) => {
+    console.log('giving hint', act, hintIndex)
     const currentHints: Hint[][] = JSON.parse(JSON.stringify(leftHints));
-    currentHints[act].splice(hintIndex, 1);
+    currentHints[act - 1].splice(hintIndex, 1);
+    console.log(currentHints);
     setLeftHints(currentHints);
   };
 

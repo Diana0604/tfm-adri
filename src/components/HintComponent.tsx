@@ -4,10 +4,15 @@ import { HintContext } from "../contexts/HintContextProvider";
 interface HintProps {
   currentHint: Hint | undefined;
   actIndex: number;
+  hintIndex: number;
 }
 
 const HintComponent = (props: HintProps) => {
-  const { currentHint, actIndex } = props;
+  const { giveHint } = useContext(HintContext);
+
+  const { currentHint, actIndex, hintIndex } = props;
+
+  const handleGiveHint = () => giveHint(actIndex, hintIndex);
 
   return (
     <div
@@ -24,7 +29,9 @@ const HintComponent = (props: HintProps) => {
           <div className="padding-5">acto {actIndex}</div>
 
           <div className="container">
-            <button className="button">Give Hint</button>
+            <button className="button" onClick={handleGiveHint}>
+              Give Hint
+            </button>
           </div>
         </>
       ) : undefined}

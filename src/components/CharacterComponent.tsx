@@ -13,21 +13,28 @@ const CharacterComponent = () => {
 
   const [currentHint, setCurrentHint] = useState<Hint>();
   const [hintAct, setHintAct] = useState<number>(0);
+  const [hintIndex, setHintIndex] = useState<number>(0);
 
   useEffect(() => {
     for (const nextAct in leftHints) {
       //if beyond act return
-      if (Number(nextAct) + 1 > act) break;
+      if (Number(nextAct) + 1 > act) {
+        setCurrentHint(undefined);
+        return;
+      }
 
       //check if active hint for this character
-      for (const hint of leftHints[nextAct]) {
+      for (const hintIndex in leftHints[nextAct]) {
+        const hint = leftHints[nextAct][hintIndex];
         if (hint.belongsTo.includes(character.name)) {
           setHintAct(Number(nextAct) + 1);
           setCurrentHint(hint);
+          setHintIndex(Number(hintIndex));
           return;
         }
       }
     }
+    setCurrentHint(undefined);
   }, [act, leftHints]);
 
   return (
@@ -35,7 +42,11 @@ const CharacterComponent = () => {
       <div className="outlined">
         {character.title} {character.name} {character.surname}
       </div>
-      <HintComponent currentHint={currentHint} actIndex={hintAct} />
+      <HintComponent
+        currentHint={currentHint}
+        actIndex={hintAct}
+        hintIndex={hintIndex}
+      />
     </div>
   );
 };

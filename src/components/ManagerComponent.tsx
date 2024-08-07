@@ -11,13 +11,13 @@ const ManagerComponent = () => {
     <div>
       <div>acto: {act}</div>
       <div className="horizontal-flex">
-      {characters.map((character) => {
-        return (
-          <CharacterContext.Provider value={character}>
-            <CharacterComponent />
-          </CharacterContext.Provider>
-        );
-      })}
+        {characters.map((character, index) => {
+          return (
+            <CharacterContext.Provider key={index} value={character}>
+              <CharacterComponent />
+            </CharacterContext.Provider>
+          );
+        })}
       </div>
       <div className="container padding-5">
         <button className="button" onClick={nextAct}>
