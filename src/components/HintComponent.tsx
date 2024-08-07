@@ -1,8 +1,14 @@
 import { useContext } from "react";
 import { HintContext } from "../contexts/HintContextProvider";
 
-const HintComponent = () => {
-  const { currentHint, nextHint, actIndex } = useContext(HintContext);
+interface HintProps {
+  currentHint: Hint | undefined;
+  actIndex: number;
+}
+
+const HintComponent = (props: HintProps) => {
+  const { currentHint, actIndex } = props;
+
   return (
     <div
       className={`soft-background margin-20 ${
@@ -17,16 +23,8 @@ const HintComponent = () => {
 
           <div className="padding-5">acto {actIndex}</div>
 
-          {currentHint.duplicated ? (
-            <div className="padding-5">
-              compartida con {currentHint.duplicated}
-            </div>
-          ) : undefined}
-
           <div className="container">
-            <button className="button" onClick={nextHint}>
-              Give Hint
-            </button>
+            <button className="button">Give Hint</button>
           </div>
         </>
       ) : undefined}

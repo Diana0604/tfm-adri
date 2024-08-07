@@ -1,51 +1,29 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { CharacterContext } from "./CharacterContext";
-import { ArgumentContext } from "./ArgumentContextProvider";
+import { createContext, useState } from "react";
+import { hints } from "../constants";
 
 interface HintContextProps {
-  currentHint?: Hint;
-  nextHint: () => void;
-  actIndex: number
+  leftHints: Hint[][];
+  giveHint: (act: number, hintIndex: number) => void;
 }
 
 const initProps: HintContextProps = {
-  nextHint: () => {},
-  actIndex: 1
+  leftHints: [],
+  giveHint: () => {},
 };
 
 export const HintContext = createContext<HintContextProps>(initProps);
 
 const HintContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const character = useContext(CharacterContext);
-  const { act } = useContext(ArgumentContext);
-  const [currentHint, setCurrentHint] = useState<Hint>();
-  const [hintIndex, setHintIndex] = useState<number>(0);
-  const [actIndex, setActIndex] = useState<number>(1);
+  const [leftHints, setLeftHints] = useState<Hint[][]>(hints);
 
-  useEffect(() => {
-    if (currentHint === undefined) {
-      setHintIndex(0);
-      setActIndex(act);
-    }
-  }, [act]);
-
-  useEffect(() => {
-    if (character.hints[actIndex] && character.hints[actIndex][hintIndex])
-      setCurrentHint(character.hints[actIndex][hintIndex]);
-    else {
-      if (act > actIndex) {
-        setActIndex(actIndex + 1);
-        setHintIndex(0);
-      } else setCurrentHint(undefined);
-    }
-  }, [hintIndex]);
-
-  const nextHint = () => {
-    setHintIndex(hintIndex + 1);
+  const giveHint = (act: number, hintIndex: number) => {
+    const currentHints: Hint[][] = JSON.parse(JSON.stringify(leftHints));
+    currentHints[act].splice(hintIndex, 1);
+    setLeftHints(currentHints);
   };
 
   return (
-    <HintContext.Provider value={{ currentHint, nextHint, actIndex }}>
+    <HintContext.Provider value={{ leftHints, giveHint }}>
       {children}
     </HintContext.Provider>
   );
