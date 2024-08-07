@@ -5,10 +5,12 @@ import { ArgumentContext } from "./ArgumentContextProvider";
 interface HintContextProps {
   currentHint?: Hint;
   nextHint: () => void;
+  actIndex: number
 }
 
 const initProps: HintContextProps = {
   nextHint: () => {},
+  actIndex: 1
 };
 
 export const HintContext = createContext<HintContextProps>(initProps);
@@ -43,7 +45,7 @@ const HintContextProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <HintContext.Provider value={{ currentHint, nextHint }}>
+    <HintContext.Provider value={{ currentHint, nextHint, actIndex }}>
       {children}
     </HintContext.Provider>
   );

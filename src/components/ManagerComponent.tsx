@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { ArgumentContext } from "../contexts/ArgumentContextProvider";
 
 const ManagerComponent = () => {
-  const { nextAct } = useContext(ArgumentContext);
+  const { act, nextAct } = useContext(ArgumentContext);
 
   return (
     <div>
+      <div>acto: {act}</div>
       {characters.map((character) => {
         return (
           <CharacterContext.Provider value={character}>
