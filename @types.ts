@@ -13,5 +13,5 @@ type Hint = {
   type: HintType,
   name: string,
   hintDependency?: string,
-  duplicated?: string,
+  duplicated?: CharacterName,
 }
