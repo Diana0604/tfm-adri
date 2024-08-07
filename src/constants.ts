@@ -100,3 +100,19 @@ export const hints: Hint[][] = [
     }
   ],
 ]
+
+export const extraHints: Hint[] = [
+  {
+    type: 'Informe',
+    name: 'Un informe medico',
+    belongsTo: []
+  }, {
+    type: 'Grabacion',
+    name: 'Una conversacion en un hotel',
+    belongsTo: []
+  }, {
+    type: 'Informe',
+    name: 'Un informe sobre Julio Cortes',
+    belongsTo: []
+  }
+]

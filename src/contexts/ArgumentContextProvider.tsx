@@ -20,7 +20,7 @@ const ArgumentContextProvider = ({
   const [act, setAct] = useState<number>(1);
 
   const nextAct = () => {
-    setAct(act + 1);
+    if (act < 6) setAct(act + 1);
   };
 
   return (

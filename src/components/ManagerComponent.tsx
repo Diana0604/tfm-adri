@@ -3,6 +3,7 @@ import CharacterComponent from "./CharacterComponent";
 import { characters } from "../constants";
 import { useContext } from "react";
 import { ArgumentContext } from "../contexts/ArgumentContextProvider";
+import ExtraHintsComponent from "./ExtraHintComponent";
 
 const ManagerComponent = () => {
   const { act, nextAct } = useContext(ArgumentContext);
@@ -24,6 +25,8 @@ const ManagerComponent = () => {
           Next Act
         </button>
       </div>
+
+      <ExtraHintsComponent/>
     </div>
   );
 };

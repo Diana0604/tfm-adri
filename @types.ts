@@ -4,7 +4,7 @@ type Character = {
   title?: string,
 }
 
-type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema' | 'Misc'
+type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema' | 'Informe' | 'Misc'
 
 type CharacterName = 'J.' | 'Lucia' | 'Sergi' | 'Pedro' | 'Ernesto' | 'Sargento' | 'Marta' | 'Abril' | 'Daniel' | 'Andrea' | 'Ivette' | 'Carim' | 'Ema' | ''
 
