@@ -10,6 +10,7 @@ const ManagerComponent = () => {
   return (
     <div>
       <div>acto: {act}</div>
+      <div className="horizontal-flex">
       {characters.map((character) => {
         return (
           <CharacterContext.Provider value={character}>
@@ -17,10 +18,11 @@ const ManagerComponent = () => {
           </CharacterContext.Provider>
         );
       })}
-      <div className="container">
-        <div className="button" onClick={nextAct}>
+      </div>
+      <div className="container padding-5">
+        <button className="button" onClick={nextAct}>
           Next Act
-        </div>
+        </button>
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ import HintContextProvider from "../contexts/HintContextProvider";
 const CharacterComponent = () => {
   const character = useContext(CharacterContext);
   return (
-    <div className="character">
-      <div>
+    <div>
+      <div className="outlined">
         {character.title} {character.name} {character.surname}
       </div>
       <HintContextProvider>
