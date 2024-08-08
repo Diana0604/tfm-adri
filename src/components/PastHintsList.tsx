@@ -10,7 +10,7 @@ const PastHintsList = () => {
   }, [pastHints]);
 
   return (
-    <div style={{ width: "200px" }}>
+    <div style={{ width: "300px" }}>
       <div className="outlined">Past hints</div>
       {pastHints.map((hint, index) => <PastHint hint={hint}/>)}
     </div>
