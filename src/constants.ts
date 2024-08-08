@@ -70,20 +70,30 @@ export const hints: Hint[][] = [
   //acto 2
   [
     {
+      type: 'Pista Disponible',
+      name: '-',
+      belongsTo: ['J.']
+    },
+    {
       type: 'Poema',
       name: 'Un poema sobre la infancia',
       belongsTo: ['J.']
     },
     {
       type: 'Grabacion',
-      name: 'Una grabacion al piano',
+      name: 'Una canción triste',
+      belongsTo: ['J.']
+    },
+    {
+      type: 'Conversación',
+      name: 'Lucía y J.',
+      hintDependency: 'fotografia de boda - Lucia',
       belongsTo: ['J.']
     },
     {
       type: 'Grabacion',
-      name: 'Una conversacion con Lucia',
-      hintDependency: 'fotografia de boda - Lucia',
-      belongsTo: ['J.']
+      name: 'Prácticas de tiro',
+      belongsTo: ['Sergi']
     }
   ],
   //acto 3
