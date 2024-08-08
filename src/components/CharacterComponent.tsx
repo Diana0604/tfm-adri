@@ -35,7 +35,7 @@ const CharacterComponent = () => {
       }
     }
     setCurrentHint(undefined);
-  }, [act, leftHints]);
+  }, [act, leftHints, character.name]);
 
   return (
     <div>

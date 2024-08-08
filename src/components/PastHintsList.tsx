@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { HintContext } from "../contexts/HintContextProvider";
 import PastHint from "./PastHint";
 
