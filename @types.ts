@@ -12,5 +12,6 @@ type Hint = {
   type: HintType,
   name: string,
   hintDependency?: string,
-  belongsTo: CharacterName[]
+  belongsTo: CharacterName[],
+  audio?: string
 }

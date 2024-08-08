@@ -88,7 +88,8 @@ export const hints: Hint[][] = [
       type: 'Conversación',
       name: 'Lucía y J.',
       hintDependency: 'fotografia de boda - Lucia',
-      belongsTo: ['J.']
+      belongsTo: ['J.'],
+      audio: 'sounds/a2/Lucia-Julio.wav'
     },
     {
       type: 'Grabacion',

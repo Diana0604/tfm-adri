@@ -28,6 +28,19 @@ const HintComponent = (props: HintProps) => {
 
           <div className="padding-5">acto {actIndex}</div>
 
+          {currentHint.audio ? (
+            <div className="container">
+              <button className="button" onClick={() => {
+                const audioURL = `${window.location.href}/${currentHint.audio}`;
+                console.log(audioURL)
+                const audio = new Audio(`${window.location.href}/${currentHint.audio}`);
+                audio.play();
+              }}>
+                Play Sound
+              </button>
+            </div>
+          ) : undefined}
+
           <div className="container">
             <button className="button" onClick={handleGiveHint}>
               Give Hint
