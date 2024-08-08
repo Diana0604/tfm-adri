@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tfm-adri/static/css/main.42baca79.css",
-    "main.js": "/tfm-adri/static/js/main.94d4368b.js",
+    "main.js": "/tfm-adri/static/js/main.d9f4f628.js",
     "static/js/453.8e2bdb1a.chunk.js": "/tfm-adri/static/js/453.8e2bdb1a.chunk.js",
     "index.html": "/tfm-adri/index.html",
     "main.42baca79.css.map": "/tfm-adri/static/css/main.42baca79.css.map",
-    "main.94d4368b.js.map": "/tfm-adri/static/js/main.94d4368b.js.map",
+    "main.d9f4f628.js.map": "/tfm-adri/static/js/main.d9f4f628.js.map",
     "453.8e2bdb1a.chunk.js.map": "/tfm-adri/static/js/453.8e2bdb1a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42baca79.css",
-    "static/js/main.94d4368b.js"
+    "static/js/main.d9f4f628.js"
   ]
 }
