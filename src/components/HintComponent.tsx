@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { HintContext } from "../contexts/HintContextProvider";
 
 interface HintProps {
-  currentHint: Hint | undefined;
+  currentHint: Hint;
   actIndex: number;
   hintIndex: number;
 }
@@ -20,34 +20,37 @@ const HintComponent = (props: HintProps) => {
         currentHint ? "padding-5" : undefined
       }`}
     >
-      {currentHint ? (
-        <>
-          <div className="padding-5">{currentHint.type}</div>
+      <>
+        <div className="padding-5">{currentHint.type}</div>
 
-          <div className="padding-5">{currentHint.name}</div>
+        <div className="padding-5">{currentHint.name}</div>
 
-          <div className="padding-5">acto {actIndex}</div>
+        <div className="padding-5">acto {actIndex}</div>
 
-          {currentHint.audio ? (
-            <div className="container">
-              <button className="button" onClick={() => {
+        {currentHint.audio ? (
+          <div className="container margin-5">
+            <button
+              className="button"
+              onClick={() => {
                 const audioURL = `${window.location.href}/${currentHint.audio}`;
-                console.log(audioURL)
-                const audio = new Audio(`${window.location.href}/${currentHint.audio}`);
+                console.log(audioURL);
+                const audio = new Audio(
+                  `${window.location.href}/${currentHint.audio}`
+                );
                 audio.play();
-              }}>
-                Play Sound
-              </button>
-            </div>
-          ) : undefined}
-
-          <div className="container">
-            <button className="button" onClick={handleGiveHint}>
-              Give Hint
+              }}
+            >
+              Play Sound
             </button>
           </div>
-        </>
-      ) : undefined}
+        ) : undefined}
+
+        <div className="container">
+          <button className="button" onClick={handleGiveHint}>
+            Give Hint
+          </button>
+        </div>
+      </>
     </div>
   );
 };

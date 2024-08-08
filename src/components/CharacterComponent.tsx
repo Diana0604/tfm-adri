@@ -39,14 +39,18 @@ const CharacterComponent = () => {
 
   return (
     <div>
-      <div className="outlined">
-        {character.title} {character.name} {character.surname}
-      </div>
-      <HintComponent
-        currentHint={currentHint}
-        actIndex={hintAct}
-        hintIndex={hintIndex}
-      />
+      {currentHint ? (
+        <div style={{width: '200px'}}>
+          <div className="outlined">
+            {character.title} {character.name} {character.surname}
+          </div>
+          <HintComponent
+            currentHint={currentHint}
+            actIndex={hintAct}
+            hintIndex={hintIndex}
+          />
+        </div>
+      ) : undefined}
     </div>
   );
 };
