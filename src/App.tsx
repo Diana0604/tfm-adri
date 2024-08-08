@@ -6,7 +6,7 @@ import ExtraHintsContextProvider from "./contexts/ExtraHintContextProvider";
 
 function App() {
   return (
-    <div className="App container">
+    <div className="App">
       <ArgumentContextProvider>
         <ExtraHintsContextProvider>
           <HintContextProvider>

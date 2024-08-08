@@ -40,7 +40,7 @@ const CharacterComponent = () => {
   return (
     <div>
       {currentHint ? (
-        <div style={{width: '200px'}}>
+        <div style={{width: '300px'}}>
           <div className="outlined">
             {character.title} {character.name} {character.surname}
           </div>

@@ -10,17 +10,21 @@ const ExtraHintsComponent = () => {
   const { hintIndex } = useContext(ExtraHintsContext);
 
   return (
-    <div>
-      {act > 5 ? 
+    <div className="container">
+      {act > 5 ? (
         <div>
-          <div className="outlined">Extra Hints</div> 
-          <HintComponent currentHint={extraHints[hintIndex]} actIndex={6} hintIndex={hintIndex}/>
-          </div>
-        
-        
-      : undefined}
+          <div className="outlined">Extra Hints</div>
+          {hintIndex < extraHints.length ? (
+            <HintComponent
+              currentHint={extraHints[hintIndex]}
+              actIndex={6}
+              hintIndex={hintIndex}
+            />
+          ) : undefined}
+        </div>
+      ) : undefined}
     </div>
   );
 };
 
-export default ExtraHintsComponent
+export default ExtraHintsComponent;

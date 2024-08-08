@@ -15,11 +15,7 @@ const HintComponent = (props: HintProps) => {
   const handleGiveHint = () => giveHint(actIndex, hintIndex);
 
   return (
-    <div
-      className={`soft-background margin-20 ${
-        currentHint ? "padding-5" : undefined
-      }`}
-    >
+    <div className={`soft-background margin-20 padding-5`} style={{minHeight: '200px'}}>
       <>
         <div className="padding-5">{currentHint.type}</div>
 
