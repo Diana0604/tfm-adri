@@ -4,9 +4,9 @@ type Character = {
   title?: string,
 }
 
-type HintType = 'Carta' | 'Postal' | 'Fotografia' | 'Grabacion' | 'Poema' | 'Informe' | 'Conversación' | 'Pista Disponible' | 'Misc'
+type HintType = 'Carta' | 'Postal' | 'Fotografía' | 'Grabación' | 'Poema' | 'Informe' | 'Conversación' | 'Llamada' | 'Misc' | 'Pista Disponible'
 
-type CharacterName = 'J.' | 'Lucia' | 'Sergi' | 'Pedro' | 'Ernesto' | 'Sargento' | 'Marta' | 'Abril' | 'Daniel' | 'Andrea' | 'Ivette' | 'Carim' | 'Ema' | ''
+type CharacterName = 'J.' | 'Lucia' | 'Sergi' | 'Pedro' | 'Julia' | 'Ernesto' | 'Sargento' | 'Marta' | 'Abril' | 'Daniel' | 'Marco' | 'Andrea' | 'Ivette' | 'Carim' | 'Ema' | ''
 
 type Hint = {
   type: HintType,
