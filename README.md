@@ -60,9 +60,11 @@ To test locally run:
 
 This allows you to preview your changes on the browser.
 
-To deploy to github pages run:
+To deploy to github pages:
 
-`npm run deploy`
+**Step One:** Push the `main` branch with all changes.
+
+**Step Two:** run `npm run deploy`
 
 Your deployed webpage will be available at https://github.com/Diana0604/tfm-adri
 
