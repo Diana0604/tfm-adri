@@ -461,7 +461,7 @@ export const hints: Hint[][] = [
       type: 'Conversación',
       name: 'EXTRA: Marta - Ema',
       belongsTo: ['Marta'],
-      audio:'sounds/Acto 5/todo.wav'
+      audio:'sounds/Acto 5/Marta - Ema 1.wav'
     },
     {
       type: 'Grabación',
@@ -491,7 +491,7 @@ export const hints: Hint[][] = [
       type: 'Conversación',
       name: 'Ivette - Ema',
       belongsTo: ['Ivette'],
-      audio:'sounds/Acto 5/todo.wav'
+      audio:'sounds/Acto 5/Ivette - Ema.wav'
     },
     {
       type: 'Conversación',
@@ -509,7 +509,7 @@ export const hints: Hint[][] = [
       type: 'Conversación',
       name: 'Marta - Ema',
       belongsTo: ['Ema'],
-      audio:'sounds/Acto 5/todo.wav'
+      audio:'sounds/Acto 5/Marta - Ema 2.wav'
     },
     {
       type: 'Informe',
