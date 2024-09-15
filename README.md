@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Prep
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Characters
 
-## Available Scripts
+If you wish to add new characters, you can do so by:
 
-In the project directory, you can run:
+**Step 1:** In file `@types.ts`, add First Name to the type `CharacterName` as a possibility in the form of a string.
 
-### `npm start`
+**Step 2:** In file `constants.ts` add a new character in the following form:
+`{name: <First Name>, surname: <Surname>}`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Where
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- `<First Name>` must be the same string you added to the `CharacterName` type.
+- `<Surname>` is the character's surname, can be any string.
 
-### `npm test`
+**Note:** If you miss any step or make a mistake, Visual Studio Code should let you know.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hints
 
-### `npm run build`
+Hints are stored in `constants.ts` as an array of arrays. Each individual array is the hints linked to a specific act. You can add as many acts as you want.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In each individual array, a list of hints is listed. Individual Hints are objects of type:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```typescript
+type Hint = {
+  type: HintType;
+  name: string;
+  hintDependency?: string;
+  belongsTo: CharacterName[];
+  audio?: string;
+};
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Where:
 
-### `npm run eject`
+- `HintType` is one of `'Carta' | 'Postal' | 'Fotografía' | 'Grabación' | 'Poema' | 'Informe' | 'Conversación' | 'Llamada' | 'Misc' | 'Pista Disponible'`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note:** You can add types to the list in file `@types.ts` by adding new possible strings.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `name`: name of hint
+- `hintDependency` is an optional property where the name of another hint can be placed. This is to prevent hints from appearing if they depend on another one of the same or previous act.
+- `belongseTo` is an array of `CharacterNames`. Check the file `@types.ts` to see possible names.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  **Note:** `belongsTo` is an array as one hint can belong to more than one character. It can also be left empty.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  **Note:** If you add more Characters to the play - by following the steps from the section [Characters](#characters) of this document, more `CharacterName` options will be available.
 
-## Learn More
+- audio is an optional property. If the hint has any audio linked, save audio inside `public/sounds/Acto <n>`. `audio` will then be a relative path of the form `"sounds/Acto <n>/<audio_file>"`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Extra Hints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A single vector of hints named `extraHints` is also present in the file `constants.ts`. hints can also be added to this vector. These Hints are extra and will appear "characterless" at the end of the play, once all character hints have been cleared.
+
+# Deployment
+
+To test locally run:
+
+`npm run start`
+
+This allows you to preview your changes on the browser.
+
+To deploy to github pages run:
+
+`npm run deploy`
+
+Your deployed webpage will be available at https://github.com/Diana0604/tfm-adri
+
+Enjoy :)
