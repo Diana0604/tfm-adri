@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { HintContext } from "../contexts/HintContextProvider";
+import PlaySound from "./PlaySound";
 
 interface HintProps {
   currentHint: Hint;
@@ -15,7 +16,10 @@ const HintComponent = (props: HintProps) => {
   const handleGiveHint = () => giveHint(actIndex, hintIndex);
 
   return (
-    <div className={`soft-background margin-20 padding-5`} style={{minHeight: '200px'}}>
+    <div
+      className={`soft-background margin-20 padding-5`}
+      style={{ minHeight: "200px" }}
+    >
       <>
         <div className="padding-5">{currentHint.type}</div>
 
@@ -23,23 +27,7 @@ const HintComponent = (props: HintProps) => {
 
         <div className="padding-5">acto {actIndex}</div>
 
-        {currentHint.audio ? (
-          <div className="container margin-5">
-            <button
-              className="button"
-              onClick={() => {
-                const audioURL = `${window.location.href}/${currentHint.audio}`;
-                console.log(audioURL);
-                const audio = new Audio(
-                  `${window.location.href}/${currentHint.audio}`
-                );
-                audio.play();
-              }}
-            >
-              Play Sound
-            </button>
-          </div>
-        ) : undefined}
+        {currentHint.audio ? <PlaySound src={currentHint.audio} /> : undefined}
 
         <div className="container">
           <button className="button" onClick={handleGiveHint}>
