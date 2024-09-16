@@ -106,6 +106,11 @@ export const hints: Hint[][] = [
     },
     {
       type: 'Fotografía',
+      name: 'Amigos para siempre',
+      belongsTo: ['Lucia'],
+    },
+    {
+      type: 'Fotografía',
       name: 'Recuerdos de la boda',
       belongsTo: ['Lucia'],
     },
@@ -169,9 +174,9 @@ export const hints: Hint[][] = [
     },
     {
       type: 'Grabación',
-      name: 'Un mensaje para Carlos',
+      name: 'TODO: Un mensaje para Carlos',
       belongsTo: ['Pedro'],
-      audio:'sounds/Acto 3/Pedro.wav'
+      audio:'sounds/Acto 3/todo.wav'
     },
     {
       type: 'Carta',
@@ -498,6 +503,12 @@ export const hints: Hint[][] = [
       name: 'Julio - Carim',
       belongsTo: ['Carim'],
       audio:'sounds/Acto 5/Julio - Carim.wav'
+    },
+    {
+      type: 'Conversación',
+      name: 'Andrea - Carlos',
+      belongsTo: ['Carlos'],
+      audio:'sounds/Acto 5/Andrea - Carlos.wav'
     },
     {
       type: 'Grabación',
